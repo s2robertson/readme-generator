@@ -73,16 +73,17 @@ const questions = [{
     message: 'Your email address: '
 }];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
+let outPath = './README.md';
+const outPathOverride = process.argv[2];
+if (outPathOverride) {
+    outPath = outPathOverride;
+}
 
 inquirer.prompt(questions)
 .then(answers => {
-    console.log(generateMarkdown(answers));
+    return fs.writeFile(outPath, generateMarkdown(answers));
+})
+.catch(err => {
+    console.error(err);
+    process.exit(1);
 })
