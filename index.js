@@ -1,6 +1,7 @@
 const fs = require('fs/promises');
 const path = require('path');
 const inquirer = require('inquirer');
+const generateMarkdown = require('./generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [{
@@ -46,6 +47,9 @@ const questions = [{
     }, {
         name: 'Mozilla Public License 2.0',
         value: 'Mozilla v2'
+    }, {
+        name: 'No license',
+        value: ''
     }]
 }, {
     name: 'githubId',
@@ -68,5 +72,5 @@ function writeToFile(fileName, data) {}
 
 inquirer.prompt(questions)
 .then(answers => {
-    console.log(JSON.stringify(answers));
+    console.log(generateMarkdown(answers));
 })
