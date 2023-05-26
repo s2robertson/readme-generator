@@ -26,7 +26,7 @@ const LICENSE_LINKS = {
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-    return license ? `![${license.long}](https://img.shields.io/badge/license-${license.short}-green)` : '';
+    return license ? `![${license.long}](https://img.shields.io/badge/license-${encodeURIComponent(license.short)}-green)` : '';
 }
 
 // If there is no license, return an empty string
