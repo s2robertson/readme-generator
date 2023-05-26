@@ -52,27 +52,27 @@ function generateMarkdown(data) {
 
     const installationSection = renderSection(SECTION_ID.INSTALL, 'Installation', data.installation);
     if (installationSection) {
-        tableOfContents += `[Installation](#${SECTION_ID.INSTALL})\n`;
+        tableOfContents += `* [Installation](#${SECTION_ID.INSTALL})\n`;
     }
     const usageSection = renderSection(SECTION_ID.USAGE, 'Usage', data.usage);
     if (usageSection) {
-        tableOfContents += `[Usage](#${SECTION_ID.USAGE})\n`;
+        tableOfContents += `* [Usage](#${SECTION_ID.USAGE})\n`;
     }
     const licenseSection = renderLicenseSection(data.license);
     if (licenseSection) {
-        tableOfContents += `[License](#${SECTION_ID.LICENSE})\n`;
+        tableOfContents += `* [License](#${SECTION_ID.LICENSE})\n`;
     }
     const contributionSection = renderSection(SECTION_ID.CONTRIBUTE, 'Contributing', data.contribution);
     if (contributionSection) {
-        tableOfContents += `[Contributing](#${SECTION_ID.CONTRIBUTE})\n`;
+        tableOfContents += `* [Contributing](#${SECTION_ID.CONTRIBUTE})\n`;
     }
     const testsSection = renderSection(SECTION_ID.TESTS, 'Tests', data.tests);
     if (testsSection) {
-        tableOfContents += `[Tests](#${SECTION_ID.TESTS})\n`;
+        tableOfContents += `* [Tests](#${SECTION_ID.TESTS})\n`;
     }
     const questionsSection = renderQuestionsSection(data.githubId, data.email);
     if (questionsSection) {
-        tableOfContents += `[Questions](#${SECTION_ID.QUESTIONS})\n`;
+        tableOfContents += `* [Questions](#${SECTION_ID.QUESTIONS})\n`;
     }
 
     return `# ${data.title}
