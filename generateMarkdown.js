@@ -40,8 +40,8 @@ function renderLicenseSection(license) {
 }
 
 function renderQuestionsSection(githubId, email) {
-    const githubLink = githubId.trim() ? `[My GitHub profile](https://github.com/${githubId})` : '';
-    const emailLink = email.trim() ? `[Email me](mailto:${email})` : '';
+    const githubLink = githubId.trim() ? `* [My GitHub profile](https://github.com/${githubId})` : '';
+    const emailLink = email.trim() ? `* [Email me](mailto:${email})` : '';
 
     return (githubLink || emailLink) ? `${renderSectionLink(SECTION_ID.QUESTIONS)}\n## Questions\n${githubLink}\n${emailLink}\n` : '';
 }
