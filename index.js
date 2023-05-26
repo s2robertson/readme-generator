@@ -37,19 +37,31 @@ const questions = [{
     message: 'License:',
     choices: [{
         name: 'MIT License',
-        value: 'MIT'
+        value: {
+            short: 'MIT',
+            long: 'MIT License'
+        }
     }, {
         name: 'GNU GPLv3',
-        value: 'GPLv3'
+        value: {
+            short: 'GPLv3',
+            long: 'GNU GPLv3'
+        }
     }, {
         name: 'Apache License 2.0',
-        value: 'Apache v2'
+        value: {
+            short: 'Apache v2',
+            long: 'Apache License 2.0'
+        }
     }, {
         name: 'Mozilla Public License 2.0',
-        value: 'Mozilla v2'
+        value: {
+            short: 'Mozilla v2',
+            long: 'Mozilla Public License 2.0'
+        }
     }, {
         name: 'No license',
-        value: ''
+        value: null
     }]
 }, {
     name: 'githubId',

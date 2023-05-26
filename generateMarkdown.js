@@ -25,16 +25,18 @@ const LICENSE_LINKS = {
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+    return license ? `![${license.long}](https://img.shields.io/badge/license-${license.short}-green)` : '';
+}
 
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-    return `[${license}](${LICENSE_LINKS[license]})`
+    return `[${license.short}](${LICENSE_LINKS[license.short]})`
 }
 
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-    return license.trim() ? `${renderSectionLink(SECTION_ID.LICENSE)}\n## License\n${renderLicenseLink(license)}\n` : '';
+    return license ? `${renderSectionLink(SECTION_ID.LICENSE)}\n## License\n${renderLicenseLink(license)}\n` : '';
 }
 
 function renderQuestionsSection(githubId, email) {
@@ -54,6 +56,7 @@ function generateMarkdown(data) {
     const questionsSection = renderQuestionsSection(data.githubId, data.email);
 
     return `# ${data.title}
+${renderLicenseBadge(data.license)}
 
 ## Description
 ${data.description}
