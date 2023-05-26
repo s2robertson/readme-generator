@@ -5,6 +5,8 @@ This README generator asks the user a series of questions about a project, and g
 containing the provided answers.  I built this project in order to practice working with JavaScript
 in Node.js, and to use the `inquirer` module.
 
+[View sample output](./out/README.md)
+
 ## Usage
 The program can be launched from the command line with either `node index.js [outputFile]`, or
 `npm start [-- outputFile]`.  The outputFile option can be used to specify where the Markdown output
