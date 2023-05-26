@@ -8,9 +8,7 @@ const questions = [{
     name: 'title',
     type: 'input',
     message: 'Project Name: ',
-    default: function() {
-        return path.basename(process.cwd());
-    }
+    default: path.basename(process.cwd())
 }, {
     name: 'description',
     type: 'input',
